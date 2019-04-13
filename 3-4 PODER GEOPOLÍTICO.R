@@ -1,0 +1,17 @@
+## PODER GEOPOLÍTICO ##
+
+library(pastecs)
+library(moments)
+library(readr)
+library(stringr)
+library(dplyr)
+library(ggplot2)
+library(gridExtra)
+library(cowplot)
+library(ggthemes)
+library(RColorBrewer)
+library(extrafont)
+library(reshape)
+font_import()
+loadfonts(device="win") 
+fonts()
