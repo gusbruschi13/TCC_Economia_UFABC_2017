@@ -1,4 +1,4 @@
-## TAMANHO DA ECONOMIA E INTEGRA«√O COM A ECONOMIA MUNDIAL ##
+## 3-1-1    TAMANHO DA ECONOMIA E INTEGRA√á√ÉO COM A ECONOMIA MUNDIAL ##
 
 library(pastecs)
 library(moments)
@@ -23,12 +23,12 @@ loadfonts(device="win")
 fonts()
 
 
-####### TAXA DE CRESCIMENTO DOS COMPONENTES DO PIB CHIN S (1997-2014) EM % #######
+####### TAXA DE CRESCIMENTO DOS COMPONENTES DO PIB CHIN√äS (1997-2014) EM % #######
 
-# ABRIR BASES E REALIZAR AS TRANSFORMA«’ES: 
+# ABRIR BASES E REALIZAR AS TRANSFORMA√á√ïES: 
 
-CH_PIB1 <- read.csv("C:/Users/Gustavo Bruschi/Downloads/TCC/TCC - DADOS/NBS/PIB_1952_2014.csv")
-COMP_PIB1 <- read.csv("C:/Users/Gustavo Bruschi/Downloads/TCC/TCC - DADOS/NBS/COMPONENTES DO PIB.csv")
+CH_PIB1 <- read.csv("PIB_1952_2014.csv")
+COMP_PIB1 <- read.csv("COMPONENTES DO PIB.csv")
 
 
 COMP_CH_PIB1 <- data.frame(DATA = as.Date(CH_PIB1$ANO, format = "%d/%m/%Y"),
@@ -40,7 +40,6 @@ COMP_CH_PIB1 <- data.frame(DATA = as.Date(CH_PIB1$ANO, format = "%d/%m/%Y"),
                       CONS_GOV = COMP_PIB1$GOV_CONS,
                       CAP_FOR = COMP_PIB1$CAP_BRU_FORM,
                       NX = COMP_PIB1$EXP_LIQ)
-
 
 
 COMP_CH_PIB2 <- data.frame(DATA = COMP_CH_PIB1$DATA,
@@ -79,9 +78,9 @@ attach(TX_COMP_CH_PIB2)
 TX_COMP_CH_PIB3 <- TX_COMP_CH_PIB2[which(DATA >= '1995-01-01'),]
 detach(TX_COMP_CH_PIB2)
 
-# PLOTAR GR¡FICOS:
+# PLOTAR GR√ÅFICOS:
 
-CONS_FAM <- ggplot(TX_COMP_CH_PIB3, aes(x = DATA, y = TX_PIB_CONS_FAM)) + geom_line(size = 0.75, linetype = "solid") + geom_point(shape=21, fill= "white", color= "black", size=2.2) + geom_hline(yintercept = 0) + scale_x_date(limits = as.Date(c('1997-01-01','2014-01-01')),date_breaks ="1 years", date_labels = "%Y") + ylab("CRESC. CONS. FAMÕLIAS NO CRESC. PIB ( % )") + theme_hc() + theme(text = element_text(family = "Arial"), axis.text.x = element_text(size=9,color="black"), axis.text.y = element_text(size=9,color="black"), axis.title.x = element_blank(), axis.title.y = element_text(size=10,color="black"),
+CONS_FAM <- ggplot(TX_COMP_CH_PIB3, aes(x = DATA, y = TX_PIB_CONS_FAM)) +geom_line(size = 0.75, linetype = "solid") + geom_point(shape=21, fill= "white", color= "black", size=2.2) + geom_hline(yintercept = 0) + scale_x_date(limits = as.Date(c('1997-01-01','2014-01-01')),date_breaks ="1 years", date_labels = "%Y") + ylab("CRESC. CONS. FAM√çLIAS NO CRESC. PIB ( % )") + theme_hc() + theme(text = element_text(family = "Arial"), axis.text.x = element_text(size=9,color="black"), axis.text.y = element_text(size=9,color="black"), axis.title.x = element_blank(), axis.title.y = element_text(size=10,color="black"),
                                                                                                                                                                                                                                                                                                                  legend.position = c("bottom"), legend.direction = "horizontal", legend.title = element_blank(), legend.text = element_text(size=10, color="black"),
                                                                                                                                                                                                                                                                                                                  plot.title = element_text(hjust = 0.5, size = 14),
                                                                                                                                                                                                                                                                                                                  axis.ticks = element_blank(), axis.line = element_line(color = "black", size = 0.5), axis.line.x = element_blank(),
@@ -99,7 +98,7 @@ CAP_FOR <- ggplot(TX_COMP_CH_PIB3, aes(x = DATA, y = TX_PIB_CAP_FOR)) + geom_lin
                                                                                                                                                                                                                                                                                                               axis.ticks = element_blank(), axis.line = element_line(color = "black", size = 0.5), axis.line.x = element_blank(),
                                                                                                                                                                                                                                                                                                               panel.grid.major = element_blank(), panel.grid.minor = element_line(size=0.2,linetype="solid",color="grey90"))
 
-NX <- ggplot(TX_COMP_CH_PIB3, aes(x = DATA, y = TX_PIB_NX)) + geom_line(size = 0.75, linetype = "solid") + geom_point(shape=21, fill= "white", color= "black", size=2.2) + geom_hline(yintercept = 0) + scale_x_date(limits = as.Date(c('1997-01-01','2014-01-01')),date_breaks ="1 years", date_labels = "%Y") + ylab("CRESC. EXP. LÕQUIDAS NO CRESC. PIB ( % )") + theme_hc() + theme(text = element_text(family = "Arial"), axis.text.x = element_text(size=9,color="black"), axis.text.y = element_text(size=9,color="black"), axis.title.x = element_blank(), axis.title.y = element_text(size=10,color="black"),
+NX <- ggplot(TX_COMP_CH_PIB3, aes(x = DATA, y = TX_PIB_NX)) + geom_line(size = 0.75, linetype = "solid") + geom_point(shape=21, fill= "white", color= "black", size=2.2) + geom_hline(yintercept = 0) + scale_x_date(limits = as.Date(c('1997-01-01','2014-01-01')),date_breaks ="1 years", date_labels = "%Y") + ylab("CRESC. EXP. L√çQUIDAS NO CRESC. PIB ( % )") + theme_hc() + theme(text = element_text(family = "Arial"), axis.text.x = element_text(size=9,color="black"), axis.text.y = element_text(size=9,color="black"), axis.title.x = element_blank(), axis.title.y = element_text(size=10,color="black"),
                                                                                                                                                                                                                                                                                                     legend.position = c("bottom"), legend.direction = "horizontal", legend.title = element_blank(), legend.text = element_text(size=10, color="black"),
                                                                                                                                                                                                                                                                                                     plot.title = element_text(hjust = 0.5, size = 14),
                                                                                                                                                                                                                                                                                                     axis.ticks = element_blank(), axis.line.y = element_line(color = "black", size = 0.5), axis.line.x = element_blank(),
@@ -110,15 +109,15 @@ PLOT_COMP_PIB
 
 
 
-########################## COMPOSI«√O EMPREGO ################################
+########################## COMPOSI√á√ÉO EMPREGO ################################
 
 
 
 
 
-########################## ANALISE COMPOSI«√O EMPRESAS ################################
+########################## ANALISE COMPOSI√á√ÉO EMPRESAS ################################
 
-# ABRIR BASES E REALIZAR AS TRANSFORMA«’ES: 
+# ABRIR BASES E REALIZAR AS TRANSFORMA√á√ïES: 
 
 CHINA_INFO_EMPR <- read.csv("C:/Users/Gustavo Bruschi/Downloads/TCC/TCC - DADOS/NBS/INFO_EMPRESAS.csv")
 
@@ -179,7 +178,7 @@ INV_5 <- data.frame(DATA = ts(INV_4$DATA),
                     value = INV_4$value,
                     variable = INV_4$variable)
 
-# PLOTAR GR¡FICOS:
+# PLOTAR GR√ÅFICOS:
 
 CORES_RATIO <- c("EMPRESAS ESTATAIS" = "firebrick4", "EMPRESAS PRIVADAS" = "steelblue4", "EMPRESAS ESTRANGEIRAS" = "springgreen3")
 
@@ -201,10 +200,10 @@ CHN_INV1 <- ggplot(INV_5, aes(x = DATA, y = value, group = variable, colour = va
 CHN_INV1
 
 
-########################## BALAN«A COMERCIAL ######################################
+########################## BALAN√áA COMERCIAL ######################################
 
 
-# ABRIR BASES E REALIZAR AS TRANSFORMA«’ES: 
+# ABRIR BASES E REALIZAR AS TRANSFORMA√á√ïES: 
 
 CHINA_EXP_IMP1 <- read.csv("C:/Users/Gustavo Bruschi/Downloads/TCC/TCC - DADOS/NBS/CHINA_IMPORTS_EXPORTS.csv")
 PIB <- read.csv("C:/Users/Gustavo Bruschi/Downloads/TCC/TCC - DADOS/NBS/PIB_1952_2014.csv")
@@ -224,7 +223,7 @@ EXP_IMP_FINAL1 <- data.frame(DATA = as.Date(CHINA_EXP_IMP1$DATA, format = "%d/%m
                              EXP_PIB = CHINA_EXP_IMP1$EXP/EDIT_PIB3$PIB,
                              IMP_PIB = CHINA_EXP_IMP1$IMP/EDIT_PIB3$PIB)
 
-EXP_IMP_FINAL2 <- rename(EXP_IMP_FINAL1, c(DATA = "DATA", EXP_PIB = "EXPORTA«’ES", IMP_PIB = "IMPORTA«’ES"))
+EXP_IMP_FINAL2 <- rename(EXP_IMP_FINAL1, c(DATA = "DATA", EXP_PIB = "EXPORTA√á√ïES", IMP_PIB = "IMPORTA√á√ïES"))
 
 EXP_IMP_FINAL3 <- melt(EXP_IMP_FINAL2, id = c("DATA"), na.rm = TRUE)
 
@@ -238,19 +237,19 @@ CHINA_CONTA_CORR1 <- read.csv("C:/Users/Gustavo Bruschi/Downloads/TCC/TCC - DADO
 DATA <- as.Date(CHINA_CONTA_CORR$ANOS, format = "%d/%m/%Y")
 
 CHINA_CONTA_CORR2 <- data.frame(DATA = as.Date(CHINA_CONTA_CORR1$ANOS, format = "%d/%m/%Y"),
-                        BS_TOTAL = ts(CHINA_CONTA_CORR1$BENS_SERVI«OS_TOTAL),        
-                        BS_ATIVO = ts(CHINA_CONTA_CORR1$BENS_SERVI«OS_ATIVOS),
-                        BS_PASSIVO = ts(CHINA_CONTA_CORR1$BENS_SERVI«OS_PASSIVOS),
+                        BS_TOTAL = ts(CHINA_CONTA_CORR1$BENS_SERVI√áOS_TOTAL),        
+                        BS_ATIVO = ts(CHINA_CONTA_CORR1$BENS_SERVI√áOS_ATIVOS),
+                        BS_PASSIVO = ts(CHINA_CONTA_CORR1$BENS_SERVI√áOS_PASSIVOS),
                         CC_TOTAL = ts(CHINA_CONTA_CORR1$CONTA_CORRENTE_TOTAL),
                         CC_ATIVO = ts(CHINA_CONTA_CORR1$CONTA_CORRENTE_ATIVOS),
                         CC_ATIVO = ts(CHINA_CONTA_CORR1$CONTA_CORRENTE_PASSIVOS))
 
 
 
-# PLOTAR GR¡FICOS:
+# PLOTAR GR√ÅFICOS:
 
-CORES_BAL_COMER <- c("EXPORTA«’ES" = "tomato4", "IMPORTA«’ES" = "paleturquoise4")
-LINHAS_BAL_COMER <- c("EXPORTA«’ES" = "dashed", "IMPORTA«’ES" = "solid")
+CORES_BAL_COMER <- c("EXPORTA√á√ïES" = "tomato4", "IMPORTA√á√ïES" = "paleturquoise4")
+LINHAS_BAL_COMER <- c("EXPORTA√á√ïES" = "dashed", "IMPORTA√á√ïES" = "solid")
 
 
 PLOT_BAL_COMERC1 <- ggplot(EXP_IMP_FINAL4, aes(x = DATA, y = value, group = variable, colour = variable)) + geom_line(aes(linetype = variable),size=0.75) + geom_point(shape=21,fill="white",size=2.2) + scale_x_date(limits = as.Date(c('1997-01-01','2014-01-01')),date_breaks ="1 years", date_labels = "%Y") + ylab(" % ") + theme_hc() + scale_color_manual(values = c(CORES_BAL_COMER)) + scale_linetype_manual(values = c(LINHAS_BAL_COMER)) + theme(text = element_text(family = "Arial"), axis.text.x = element_text(size=9,color="black"), axis.text.y = element_text(size=9,color="black"), axis.title.x = element_blank(), axis.title.y = element_text(size=10,color="black"),
